@@ -16,6 +16,13 @@ class Personagem {
         this.energia = energia
         this.vida = vida
     }
+    showStatus(): void{
+        console.log("Personagem >>", this.nome)
+        console.log("Energia:", this.energia.toFixed(1))
+        console.log("Vida:", this.vida.toFixed(1))
+        console.log("Ataque:", this.ataque.toFixed(1))
+        console.log("Defesa:", this.defesa.toFixed(1))
+    }
 }
 
 class Monstro {
@@ -57,21 +64,29 @@ while(option !== 9){
     option = +teclado("Escolha uma opção")
     switch(option){
         case 1: 
-        john.ataque += 2
-        john.energia -= 2
+        john.ataque += Math.random()* 3
+        john.energia -= Math.random() * 5
+        john.defesa += Math.random() * 1
+        john.showStatus()
         break
         case 2:
-        john.defesa += 2
-        john.energia -= 2
+        john.defesa += Math.random() * 3
+        john.energia -= Math.random() * 5
+        john.ataque -= Math.random() * 1
+        john.showStatus()
         break
         case 3:
-        john.energia += 5
+        john.energia += Math.random() * 5
+        john.showStatus()
         break
         case 4:
-        john.vida += 5
+        john.vida += Math.random() * 5
+        john.showStatus()
         break
         case 7:
-        console.log("Jonh Snow >>", john)
+        john.showStatus()
+        break
+      
         
     }
 }
