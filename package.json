@@ -2,7 +2,16 @@
   "name": "poots",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules Personagem.ts"
+  },
   "repository": "https://github.com/marcusformiga/poots.git",
   "author": "marcusformiga <kiko.antares@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ts-node-dev": "^1.1.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
 }
