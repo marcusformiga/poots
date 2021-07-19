@@ -17,4 +17,7 @@ P - O que é uma classe ?
 r => classe é o modelo que serve de base para criarmos os nossos objetos
 P - O que é um objeto ?
 r => objeto é a criação do modelo (poussui propiedades e metodos)
+P - O que é um método construtor ? 
+r => o construtor é um pseudo metodo, que determina quais ações devem ser executadas ao criar o objeto
+
 
