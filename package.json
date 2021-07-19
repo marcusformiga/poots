@@ -1,0 +1,8 @@
+{
+  "name": "poots",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/marcusformiga/poots.git",
+  "author": "marcusformiga <kiko.antares@gmail.com>",
+  "license": "MIT"
+}
