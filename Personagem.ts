@@ -1,4 +1,4 @@
-
+import prompt from 'prompt-sync'
 class Personagem {
     nome: string = ""
     ataque: number = 0
@@ -41,10 +41,37 @@ class Montaria {
     ){}
 }
 
-let sansa: Personagem = new Personagem("Sansa Stark", 20, 15, 50, 100)
-let inimigoDaFloresta: Monstro = new Monstro("Monstro da floresta", 30, 35, 70, 120)
-let urso = new Montaria("Verão", 40, 50, 150, 150)
-
-console.log("Personagem >>", sansa)
-console.log("Monstro >>", inimigoDaFloresta)
-console.log("Montaria >>", urso)
+let john: Personagem = new Personagem("John Snow", 20, 20, 20, 100)
+const teclado = prompt()
+let option: number = 0
+while(option !== 9){
+    console.log("==============Personagem ================")
+    console.log("1 - Treinar ataque")
+    console.log("2 - Treinar defesa")
+    console.log("3 - Descansar")
+    console.log("4 - Recuperar vida")
+    console.log("5 - Procurar missão")
+    console.log("6 - Treinar montaria")
+    console.log("7 - Imprimir atributos")
+    console.log("9 - Sair")
+    option = +teclado("Escolha uma opção")
+    switch(option){
+        case 1: 
+        john.ataque += 2
+        john.energia -= 2
+        break
+        case 2:
+        john.defesa += 2
+        john.energia -= 2
+        break
+        case 3:
+        john.energia += 5
+        break
+        case 4:
+        john.vida += 5
+        break
+        case 7:
+        console.log("Jonh Snow >>", john)
+        
+    }
+}
