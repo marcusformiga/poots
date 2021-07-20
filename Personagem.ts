@@ -1,57 +1,67 @@
 import prompt from 'prompt-sync'
 class Personagem {
-   private nome: string = ""
-   private ataque: number = 0
-   private defesa: number = 0
-   private energia: number = 0
-   private vida: number = 0
+   private _nome: string = ""
+   private _ataque: number = 0
+   private _defesa: number = 0
+   private _energia: number = 0
+   private _vida: number = 0
     constructor(nome: string, 
         ataque: number, 
         defesa: number, 
         energia: number, 
         vida: number){
-        this.nome = nome
-        this.ataque = ataque
-        this.defesa = defesa
-        this.energia = energia
-        this.vida = vida
+        this._nome = nome
+        this._ataque = ataque
+        this._defesa = defesa
+        this._energia = energia
+        this._vida = vida
     }
+    
+    public get nome() : string {
+        return this._nome
+    }
+     
+    public set nome(nome : string) {
+        this._nome = nome
+    }
+    
+    
    public showStatus(): void{
-        console.log("Personagem >>", this.nome)
-        console.log("Energia:", this.energia.toFixed(1))
-        console.log("Vida:", this.vida.toFixed(1))
-        console.log("Ataque:", this.ataque.toFixed(1))
-        console.log("Defesa:", this.defesa.toFixed(1))
+        console.log("Personagem >>", this._nome)
+        console.log("Energia:", this._energia.toFixed(1))
+        console.log("Vida:", this._vida.toFixed(1))
+        console.log("Ataque:", this._ataque.toFixed(1))
+        console.log("Defesa:", this._defesa.toFixed(1))
     }
    public treinarAtaque(): void {
         this.estaMorto()
-        this.ataque += Math.random() * 3
-        this.energia -= Math.random() * 5
-        if(this.ataque > 100){
-            this.ataque = 100
+        this._ataque += Math.random() * 3
+        this._energia -= Math.random() * 5
+        if(this._ataque > 100){
+            this._ataque = 100
         }
     }
    public treinarDefesa(): void {
         this.estaMorto()
-        this.defesa += Math.random() * 3
-        this.energia -= Math.random() * 5
-        if(this.defesa > 100){
-            this.defesa = 100
+        this._defesa += Math.random() * 3
+        this._energia -= Math.random() * 5
+        if(this._defesa > 100){
+            this._defesa = 100
         }
     }
    public descansar(): void {
-        this.energia += Math.random() * 5
-        this.vida += Math.random() * 5
-        if(this.energia > 100){
-            this.energia = 100
+        this._energia += Math.random() * 5
+        this._vida += Math.random() * 5
+        if(this._energia > 100){
+            this._energia = 100
             console.log("Você ja descansou o suficiente")
         }
-        if(this.vida > 100){
-            this.vida = 100
+        if(this._vida > 100){
+            this._vida = 100
         }
     }
    public estaMorto(): boolean{
-        if(this.energia < 0){
+        if(this._energia < 0){
             console.log("O Personagem morreu")
             return true
         }else{
@@ -87,7 +97,7 @@ let person: Personagem = new Personagem("John Snow", 20, 20, 20, 100)
 const teclado = prompt()
 let option: number = 0
 while(option !== 9 || person.estaMorto()){
-    console.log("==============Personagem ================")
+    console.log(`==============Personagem ${person.nome} ================`)
     console.log("1 - Treinar ataque")
     console.log("2 - Treinar defesa")
     console.log("3 - Descansar")
