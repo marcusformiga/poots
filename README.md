@@ -8,6 +8,7 @@ P - Quais as vantagens de utilizar poo ?
 
 obs: quando pensar em ler dados de uma classe - use parametro
 obs2: quando pensar em imprimir na classe, use retorno
+
 Pilares da poo
 Abstração (capacidade de pensar nos nossos objetos)
 Herança (passar para outras classes suas propiedades e metodos)
