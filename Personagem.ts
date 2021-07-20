@@ -16,14 +16,14 @@ class Personagem {
         this.energia = energia
         this.vida = vida
     }
-    showStatus(): void{
+   public showStatus(): void{
         console.log("Personagem >>", this.nome)
         console.log("Energia:", this.energia.toFixed(1))
         console.log("Vida:", this.vida.toFixed(1))
         console.log("Ataque:", this.ataque.toFixed(1))
         console.log("Defesa:", this.defesa.toFixed(1))
     }
-    treinarAtaque(): void {
+   public treinarAtaque(): void {
         this.estaMorto()
         this.ataque += Math.random() * 3
         this.energia -= Math.random() * 5
@@ -31,7 +31,7 @@ class Personagem {
             this.ataque = 100
         }
     }
-    treinarDefesa(): void {
+   public treinarDefesa(): void {
         this.estaMorto()
         this.defesa += Math.random() * 3
         this.energia -= Math.random() * 5
@@ -39,7 +39,7 @@ class Personagem {
             this.defesa = 100
         }
     }
-    descansar(): void {
+   public descansar(): void {
         this.energia += Math.random() * 5
         this.vida += Math.random() * 5
         if(this.energia > 100){
@@ -50,7 +50,7 @@ class Personagem {
             this.vida = 100
         }
     }
-    estaMorto(): boolean{
+   public estaMorto(): boolean{
         if(this.energia < 0){
             console.log("O Personagem morreu")
             return true
@@ -60,28 +60,28 @@ class Personagem {
     }
 }
 
-class Monstro {
-    constructor(private nome: string, 
-        private ataque: number, 
-        private defesa: number, 
-        private energia: number, 
-        private vida: number){
-        this.nome = nome
-        this.ataque = ataque
-        this.defesa = defesa
-        this.energia = energia
-        this.vida = vida
-    }
-}
-class Montaria {
-    constructor(
-        private nome: string,
-        private ataque: number,
-        private defesa: number,
-        private energia: number,
-        private vida: number
-    ){}
-}
+// class Monstro {
+//     constructor(private nome: string, 
+//         private ataque: number, 
+//         private defesa: number, 
+//         private energia: number, 
+//         private vida: number){
+//         this.nome = nome
+//         this.ataque = ataque
+//         this.defesa = defesa
+//         this.energia = energia
+//         this.vida = vida
+//     }
+// }
+// class Montaria {
+//     constructor(
+//         private nome: string,
+//         private ataque: number,
+//         private defesa: number,
+//         private energia: number,
+//         private vida: number
+//     ){}
+// }
 
 let person: Personagem = new Personagem("John Snow", 20, 20, 20, 100)
 const teclado = prompt()
