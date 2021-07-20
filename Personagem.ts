@@ -1,10 +1,10 @@
 import prompt from 'prompt-sync'
 class Personagem {
-   private _nome: string = ""
-   private _ataque: number = 0
-   private _defesa: number = 0
-   private _energia: number = 0
-   private _vida: number = 0
+   protected _nome: string = ""
+   protected _ataque: number = 0
+   protected _defesa: number = 0
+   protected _energia: number = 0
+   protected _vida: number = 0
     constructor(nome: string, 
         ataque: number, 
         defesa: number, 
@@ -70,30 +70,17 @@ class Personagem {
     }
 }
 
-// class Monstro {
-//     constructor(private nome: string, 
-//         private ataque: number, 
-//         private defesa: number, 
-//         private energia: number, 
-//         private vida: number){
-//         this.nome = nome
-//         this.ataque = ataque
-//         this.defesa = defesa
-//         this.energia = energia
-//         this.vida = vida
-//     }
-// }
-// class Montaria {
-//     constructor(
-//         private nome: string,
-//         private ataque: number,
-//         private defesa: number,
-//         private energia: number,
-//         private vida: number
-//     ){}
-// }
+class Monstro extends Personagem{
+    private _agilidade : number
+    constructor(nome: string, ataque: number, defesa: number, energia: number, vida: number, agilidade: number){
+        super(nome, ataque, defesa, energia, vida)
+        this._agilidade = Math.random() * 3
+    }
+}
+
 
 let person: Personagem = new Personagem("John Snow", 20, 20, 20, 100)
+let monstro: Monstro = new Monstro("Monstro das trevas", 25, 30, 120, 120, 10)
 const teclado = prompt()
 let option: number = 0
 while(option !== 9 || person.estaMorto()){
